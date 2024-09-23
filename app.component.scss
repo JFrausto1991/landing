@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    padding: 20px;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600; /* Usamos un peso más grueso para el logo */
+    color: #d48800;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espacio entre los enlaces */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Evitar que la imagen salga de los límites del contenedor */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/img/bannerOneBg.jpg') no-repeat center center/cover;
+    z-index: -1; /* La imagen estará detrás del contenido */
+    animation: zoomIn 15s ease-in-out infinite; /* Aquí el efecto de zoom */
+    transform-origin: center; /* El zoom se centrará */
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Asegúrate de que el texto esté siempre delante */
+    color: aliceblue;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #f0a500;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #d48800;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.contact-info {
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 20px;
+}
+
+.social-links a:hover {
+    color: #f0a500;
+}
+
+/* Sección Transforming Spaces */
+.transforming-spaces {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.text-content .btn {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.images {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.images img {
+    width: 300px;
+    height: auto;
+    margin: 0 10px;
+}
+
+/* Sección Dream Space */
+.dream-space {
+    text-align: center;
+    padding: 50px;
+    background-color: white;
+}
+
+.dream-space h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.story-goal {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.story, .goal {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.story h3, .goal h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.story p, .goal p {
+    font-size: 16px;
+}
+
+/* Sección de estadísticas */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 50px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 36px;
+    color: black;
+}
+
+.stat p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Estilo de los contadores */
+.counter-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.counter {
+    text-align: center;
+}
+
+.counter h2 {
+    font-size: 48px;
+    margin: 0;
+    color: #000;
+}
+
+.counter p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #777;
+}
+
+/* Estilos básicos para el contenedor del carrusel */
+.carousel-container {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel {
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    min-width: 30%;
+    margin-right: 10px;
+    border: 1px solid #ffa500;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 300px; /* Ajuste de altura para mayor espacio */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Texto sobre la imagen */
+  .service-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+  }
+  
+  .service-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .service-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+  }
+  
+  .learn-more {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #ffa500;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .carousel-btn-left {
+    left: 2%;
+  }
+  
+  .carousel-btn-right {
+    right: 2%;
+  }
+  
